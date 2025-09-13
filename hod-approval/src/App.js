@@ -1,45 +1,20 @@
-import React, { useState } from "react";
-import "./App.css";
-import charusatLogo from "./charusat.png"; // Importing the logo
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HODApproval from "./HODApproval";
+import About from "./About";
 
 function App() {
-  const [student] = useState({
-    id: "24CE017",
-    healthProblem: "Fever and Cold",
-    counsellor: "Deep Kothadiya",
-    date: "13/09/2025",
-  });
-
-  const handleApprove = () => {
-    alert(`Request for Student ID ${student.id} approved ✅`);
-  };
-
   return (
-    <div className="page-container">
-      {/* Header with logo and title */}
-      <div className="page-title-container">
-        <img src={charusatLogo} alt="CHARUSAT Logo" className="charusat-logo" />
-        <h1 className="page-title">CHARUSAT Medical Approval</h1>
-      </div>
+    <Router>
+      <Routes>
+        {/* Default page */}
+        <Route path="/" element={<HODApproval />} />
 
-      {/* Approval Card */}
-      <div className="approval-card">
-        <h2 className="title">HOD Approval</h2>
-
-        <div className="info">
-          <p><span>Student ID:</span> {student.id}</p>
-          <p><span>Health Problem:</span> {student.healthProblem}</p>
-          <p><span>Counsellor:</span> {student.counsellor}</p>
-          <p><span>Date:</span> {student.date}</p>
-        </div>
-
-        <div className="button-container">
-          <button className="approve-btn" onClick={handleApprove}>
-            Approve
-          </button>
-        </div>
-      </div>
-    </div>
+        {/* Other routes */}
+        <Route path="/hod-approval" element={<HODApproval />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
