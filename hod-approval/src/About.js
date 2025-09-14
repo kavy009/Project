@@ -15,8 +15,7 @@ function About() {
       <div className="about-header">
         <h1 className="about-title">Skill Team</h1>
         <p className="about-subtitle">
-          Meet the brilliant minds behind this project — visionaries, developers,
-          and mentors who brought this vision to life
+          "Meet our amazing team of developers who turned an idea into reality."
         </p>
       </div>
 
